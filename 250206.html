@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas with 50 Images</title>
+    <style>
+        canvas {
+            background-color: aqua;
+           
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="600"></canvas>
+    <button >123123</button>
+    <div>tttt</div>
+    <div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div><div>tttt</div>
+</body>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+    let count=10000;
+    let x;
+    let y;
+    let aa=[];
+    for (let i = 0; i < count; i++) {
+        let img = new Image();
+        aa.push(img);
+        img.src = "https://png.pngtree.com/png-clipart/20190618/original/pngtree-anime-character-campus-game-character-anime-comic-hand-drawn-png-image_3923580.jpg";
+        img.onload = function() {
+            x = Math.random() * (canvas.width - 50);  // 랜덤 X 좌표
+            y = Math.random() * (canvas.height - 50); // 랜덤 Y 좌표
+            ctx.drawImage(img, x, y, 40, 40);  // (x, y, width, height)로 그리기
+            
+        };
+    }
+    document.getElementsByTagName('button')[0].addEventListener('click',()=>setInterval("i()",100) );
+ 
+    
+    
+
+    function i()
+    {
+        
+       
+       ctx.clearRect(0,0,canvas.width,canvas.height);
+       for (let i = 0; i < count; i++) {
+           x = Math.random() * (canvas.width - 50);  // 랜덤 X 좌표
+           y = Math.random() * (canvas.height - 50); // 랜덤 Y 좌표
+           
+           ctx.drawImage(aa[i],x,y,40,40);
+       
+       
+   }
+    }
+    
+        
+
+
+
+
+
+
+
+
+
+</script>
+</html>
