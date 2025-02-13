@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Defense</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        margin-top: 50px;
+      }
+
+      .frame {
+        width: 1200px;
+        height: 700px;
+        background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20130413_98%2Fsky152535_1365857175400aY7fb_JPEG%2F25595403_480mw.jpeg&type=a340);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
+        border: 5px solid black;
+      }
+
+      @keyframes gametitle {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .gametitle {
+        color: rgb(15, 15, 15);
+        font-size: 50px;
+        white-space: nowrap;
+        animation: gametitle 10s linear infinite; /* Slower animation */
+        overflow: hidden;
+        position: relative;
+        height: 50px;
+        top: 35%;
+        text-shadow: 3px 0 1px rgb(255, 0, 0);
+      }
+
+      .start {
+        position: absolute;
+        top: 75%;
+        right: 0.3%;
+        transform: translate(-10%, -50%);
+        padding: 15px 30px;
+        font-size: 30px;
+        font-weight: bold;
+        background-color: rgb(168, 55, 27);
+        color: rgb(241, 242, 243);
+        border-radius: 5px;
+        border: 5px solid black;
+        cursor: pointer;
+      }
+
+      .difficulty {
+        position: absolute;
+        top: 92%;
+        right: 0.3%;
+        transform: translate(-10%, -50%);
+        padding: 15px 30px;
+        font-size: 30px;
+        font-weight: bold;
+        background-color: rgb(135, 138, 124);
+        color: rgb(250, 249, 249);
+        border: none;
+        border-radius: 5px;
+        border: 5px solid black;
+        cursor: pointer;
+      }
+
+      .setframe {
+        width: 900px;
+        height: 600px;
+        background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20130413_98%2Fsky152535_1365857175400aY7fb_JPEG%2F25595403_480mw.jpeg&type=a340);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        display: none;
+      }
+
+      .setting {
+        top: 10%;
+        right: 15%;
+        width: 600px;
+        height: 500px;
+        position: absolute;
+        font-size: 35px;
+
+        text-align: center;
+        background: rgb(151, 147, 140);
+        color: rgb(14, 13, 13);
+        border-radius: 5%;
+        border: 5px solid black;
+      }
+
+      .difficultynomal {
+        position: absolute;
+        top: 50%;
+        right: 53%;
+        font-size: 30px;
+        font-weight: 900;
+        padding: 10px 25px;
+        background-color: rgb(243, 247, 7);
+        color: rgb(7, 7, 7);
+        border-radius: 5%;
+        border: 5px solid black;
+        cursor: pointer;
+      }
+
+      .difficultyhard {
+        position: absolute;
+        top: 50%;
+        right: 22%;
+        font-size: 30px;
+        font-weight: 900;
+        padding: 10px 25px;
+        background-color: rgb(255, 5, 5);
+        color: rgb(12, 12, 12);
+        border-radius: 5%;
+        border: 5px solid black;
+        cursor: pointer;
+      }
+
+      .return {
+        position: absolute;
+        top: 67%;
+        right: 35%;
+        font-size: 30px;
+        font-weight: 900;
+        padding: 10px 25px;
+        background-color: rgb(13, 56, 199);
+        color: white;
+        border-radius: 5%;
+        border: 5px solid black;
+        cursor: pointer;
+      }
+      .tcontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        margin-top: 50px;
+      }
+
+      .gameframe {
+        width: 1200px;
+        height: 600px;
+        background-color: black;
+        position: relative;
+      }
+
+      .topbar {
+        width: 1100px;
+        height: 100px;
+        background-color: gray;
+        position: relative;
+      }
+
+      .rightitembar {
+        position: absolute;
+        width: 192.8px;
+        height: 245px;
+        background-color: rgb(63, 65, 63);
+        top: 0%;
+        right: 0%;
+        border: 4px solid black;
+        border-collapse: collapse;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .itembar {
+        width: 200px;
+        height: 300px;
+        background-color: rgb(66, 63, 56);
+        position: absolute;
+        right: 0%;
+        top: 35%;
+        border: 4px solid black;
+      }
+
+      .main {
+        width: 192.8px;
+        height: 186px;
+        background-color: rgb(66, 63, 56);
+        position: absolute;
+        right: 0%;
+        top: 84.5%;
+        border: 4px solid black;
+      }
+
+      .mainbutton {
+        width: 75px;
+        height: 30px;
+        background-color: red;
+        cursor: pointer;
+        position: absolute;
+        top: 25%;
+        right: 16%;
+        border-radius: 5%;
+        border: 5px solid black;
+        padding: 10px 25px;
+        font-size: 18px;
+        font-weight: 900;
+      }
+
+      .item {
+        margin-left: auto;
+        margin-right: auto;
+        border: 4px solid black;
+        border-collapse: collapse;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      canvas {
+        width: 1000px;
+        height: 600px;
+        background-color: white;
+      }
+
+      /* #dcanvas{
+        position:absolute;
+        top:100px;
+        left:0px;
+        width: 1000px;
+        height: 600px;
+      } */
+
+      /* @media (max-width: 1200px) {
+        .testframe {
+            width: 90%;
+            height: 80%;
+        }
+        .topbar, .itembar, .rightitembar, .main {
+            width: 100%;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+    } */
+      .statusbar {
+        width: 50px;
+        height: 10px;
+      }
+      .iteminfo {
+        width: 180px;
+        height: 205px;
+        border: 3px solid black;
+        border-collapse: collapse;
+        position: absolute;
+        right: 1.5%;
+        top: 6%;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <br /><br /><br /><br /><br /><br /><br />
+    <div class="container">
+      <!-- 첫 번째 페이지: 게임 시작 및 난이도 설정 -->
+      <div class="frame" id="startPage">
+        <div class="gametitle">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1066/1066940.png"
+            width="35"
+            height="35"
+          />
+          Defense
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1066/1066940.png"
+            width="35"
+            height="35"
+          />
+        </div>
+        <div class="content">
+          <div class="start" onclick="startPage()">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/5747/5747506.png"
+              width="30"
+              height="30"
+            />
+            게임시작
+          </div>
+          <div class="difficulty" onclick="difficultyPage()">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/4776/4776167.png"
+              width="30"
+              height="30"
+            />
+            난이도설정
+          </div>
+        </div>
+      </div>
+
+      <!-- 두 번째 페이지: 난이도 설정 -->
+      <div class="setframe" id="setframe" style="display: none">
+        <div class="setting"><br /><br />게임난이도를 설정하세요!</div>
+        <div class="return" onclick="backPage()">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/318/318138.png"
+            width="45"
+            height="45"
+          />
+          돌아가기
+        </div>
+        <div class="difficultynomal" onclick="selectDifficulty('normal')">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/4611/4611213.png"
+            width="30"
+            height="30"
+          />
+          보통
+        </div>
+        <div class="difficultyhard" onclick="selectDifficulty('hard')">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/5427/5427947.png"
+            width="30"
+            height="30"
+          />
+          어려움
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3565/3565157.png"
+            width="30"
+            height="30"
+          />
+        </div>
+      </div>
+
+      <!-- 세 번째 페이지: 게임 진행 -->
+      <div class="gameframe" id="gameframe" style="display: none">
+        <div class="tcontent">
+          <div class="topbar">
+            <table>
+              <tr>
+                <th class="statusbar">Stage :</th>
+                <th class="statusbar">Wave :</th>
+                <th class="statusbar">Life :</th>
+                <th class="statusbar">Gold :</th>
+              </tr>
+            </table>
+          </div>
+          <div class="rightitembar">
+            <div class="iteminfo" id="itemInfo"></div>
+          </div>
+          <canvas id="canvas" width="1000px" height="600px"></canvas>
+          <table class="itembar">
+            <tbody>
+              <tr>
+                <th>
+                  <div
+                    class="item"
+                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/2590/2590467.png', '에너지포탑1', 1, 'null/1', 10)"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/2590/2590467.png"
+                      width="50"
+                      height="50"
+                      class="itemimg"
+                      alt="10"
+                    />
+                  </div>
+                </th>
+                <th>
+                  <div
+                    class="item"
+                    onclick="showImage('https://cdn-icons-png.freepik.com/256/6483/6483251.png?ga=GA1.1.1255525184.1737439986&semt=ais_hybrid','에너지포탑2',1,'null/1',10)"
+                  >
+                    <img
+                      src="https://cdn-icons-png.freepik.com/256/6483/6483251.png?ga=GA1.1.1255525184.1737439986&semt=ais_hybrid"
+                      width="50"
+                      height="50"
+                      class="itemimg"
+                      alt="10"
+                    />
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <div
+                    class="item"
+                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
+                </th>
+                <th>
+                  <div
+                    class="item"
+                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <div
+                    class="item" 
+                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
+                </th>
+                <th>
+                  <div
+                    class="item"
+                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <div
+                    class="item"
+                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
+                </th>
+                <th>
+                  <div
+                    class="item"
+                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <div class="main">
+            <div class="mainbutton">시작하기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="towerdefense.js"></script>
+  </body>
+</html>
