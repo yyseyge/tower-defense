@@ -219,6 +219,21 @@
         font-weight: 900;
       }
 
+      .mainbutton2 {
+        width: 75px;
+        height: 30px;
+        background-color: red;
+        cursor: pointer;
+        position: absolute;
+        top: 60%;
+        right: 16%;
+        border-radius: 5%;
+        border: 5px solid black;
+        padding: 10px 25px;
+        font-size: 18px;
+        font-weight: 900;
+      }
+
       .item {
         margin-left: auto;
         margin-right: auto;
@@ -258,8 +273,9 @@
         }
     } */
       .statusbar {
-        width: 50px;
-        height: 10px;
+        width: 200px;
+        height: 40px;
+        font-size: 30px;
       }
       .iteminfo {
         width: 180px;
@@ -368,114 +384,129 @@
                 <th>
                   <div
                     class="item"
-                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/2590/2590467.png', '에너지포탑1', 1, 'null/1', 10)"
+                    
+                    onclick="showImage('https://blogger.googleusercontent.com/img/a/AVvXsEhFgbnRyuHugzNawcclmhybMXtNAu_LP2wjpA3h4OVB7XS_Xb1a5qebBM-bsjH0A0CdbZnylmQcR1BokQdlDIlBTLkz5LRJPh8FOJgvXHIrIVAufvtc2t0diu1xobbo29XXAJnaBIlepRJvGiYUFiHeSovHDLlP1OomYKzAeQicV6Tboja4vg7FGDsfDSSF','타워1', 10, 1, 30, 10)"
                   >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/128/2590/2590467.png"
-                      width="50"
-                      height="50"
-                      class="itemimg"
-                      alt="10"
-                    />
-                  </div>
-                </th>
-                <th>
-                  <div
-                    class="item"
-                    onclick="showImage('https://cdn-icons-png.freepik.com/256/6483/6483251.png?ga=GA1.1.1255525184.1737439986&semt=ais_hybrid','에너지포탑2',1,'null/1',10)"
-                  >
-                    <img
-                      src="https://cdn-icons-png.freepik.com/256/6483/6483251.png?ga=GA1.1.1255525184.1737439986&semt=ais_hybrid"
-                      width="50"
-                      height="50"
-                      class="itemimg"
-                      alt="10"
-                    />
-                  </div>
-                </th>
-              </tr>
-              <tr>
-                <th>
-                  <div
-                    class="item"
-                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                </th>
-                <th>
-                  <div
-                    class="item"
-                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                </th>
-              </tr>
-              <tr>
-                <th>
-                  <div
-                    class="item" 
-                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                </th>
-                <th>
-                  <div
-                    class="item"
-                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                </th>
-              </tr>
-              <tr>
-                <th>
-                  <div
-                    class="item"
-                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                </th>
-                <th>
-                  <div
-                    class="item"
-                    onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
-                      width="50"
-                      height="50"
-                    />
-                  </div>
-                </th>
-              </tr>
-            </tbody>
-          </table>
+                  <!-- '타워이름', 데미지, 범위, 공격주기, 골드 -->
+                  <!-- img alt 작성법 : gold;damage;range(px단위);projectileimg;cooldown 순으로 ;으로 구분하여 작성 -->
+                  <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEhFgbnRyuHugzNawcclmhybMXtNAu_LP2wjpA3h4OVB7XS_Xb1a5qebBM-bsjH0A0CdbZnylmQcR1BokQdlDIlBTLkz5LRJPh8FOJgvXHIrIVAufvtc2t0diu1xobbo29XXAJnaBIlepRJvGiYUFiHeSovHDLlP1OomYKzAeQicV6Tboja4vg7FGDsfDSSF"
+                  width="50"
+                  height="50"
+                  class="itemimg"
+                  alt="15;20;150;1;30"
+                />
+              </div>
+            </th>
+            <th>
+              <div
+                class="item"
+                onclick="showImage('https://blogger.googleusercontent.com/img/a/AVvXsEiCsE5eLtO5JCOrPXdrolOcRdq2lRpj8NPN-P2bN-ghF23PMCyTHfOStqFw-zAt2rdhyO_qap9vtXYp1UwyxdHXYFBcPnpZ439VULBup3TzbYDZqi1CggF8PxcdMXwsAcNftLl3FAInDK8rcdnZyJ-LlQ4fdg4Hx1QX9zKYCD6QbPnlGBpp0kNHtYI6aF7L','타워2',5,10, 300,30)"
+              >
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEiCsE5eLtO5JCOrPXdrolOcRdq2lRpj8NPN-P2bN-ghF23PMCyTHfOStqFw-zAt2rdhyO_qap9vtXYp1UwyxdHXYFBcPnpZ439VULBup3TzbYDZqi1CggF8PxcdMXwsAcNftLl3FAInDK8rcdnZyJ-LlQ4fdg4Hx1QX9zKYCD6QbPnlGBpp0kNHtYI6aF7L"
+                  width="50"
+                  height="50"
+                  class="itemimg"
+                  alt="30;5;300;2;10"
+                />
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <div
+                class="item"
+                onclick="showImage('https://blogger.googleusercontent.com/img/a/AVvXsEj-blYsw_2k3RsDcQnSqw_Ld26bqJMvpgH5Kaxrq5qcT1P3Bh_OmJgl8HOAbvADFW4yLqb7Ul0gNtzEJE2MjQ977i7pyxLaR9O7Ipnn_bfSnARI3XaMr9uRdtGQXPY-Ses9KOQEv_MA2g_nQfQKRHcCogSF0b-Gtj7yhg0ARfHvzgKH6IFUvBadalSkAr8F','타워3',25,15,150,80)"
+              >
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEj-blYsw_2k3RsDcQnSqw_Ld26bqJMvpgH5Kaxrq5qcT1P3Bh_OmJgl8HOAbvADFW4yLqb7Ul0gNtzEJE2MjQ977i7pyxLaR9O7Ipnn_bfSnARI3XaMr9uRdtGQXPY-Ses9KOQEv_MA2g_nQfQKRHcCogSF0b-Gtj7yhg0ARfHvzgKH6IFUvBadalSkAr8F"
+                  width="50"
+                  height="50"
+                  class="itemimg"
+                  alt="80;25;150;3;15"
+                />
+              </div>
+            </th>
+            <th>
+              <div
+                class="item"
+                onclick="showImage('https://blogger.googleusercontent.com/img/a/AVvXsEi8Zf6V0fet0oiNRGM3S3arYp9CS0j6b3ShGWCAjYRGNzjzPs-a2pvnbPkm1aLtlszt4ymQiacrs-FL4-wmAXRFmQjQJI-SW6zh-zaM4Bo_rATkjxXKk5fYGeBpzJNexN39eVuGCQYGAVkEKu-52fVAPysTt7F5UZuhFFDqGQYGgXvnStbLoFskBsr3zftH','타워4',35,10,250,180)"
+              >
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEi8Zf6V0fet0oiNRGM3S3arYp9CS0j6b3ShGWCAjYRGNzjzPs-a2pvnbPkm1aLtlszt4ymQiacrs-FL4-wmAXRFmQjQJI-SW6zh-zaM4Bo_rATkjxXKk5fYGeBpzJNexN39eVuGCQYGAVkEKu-52fVAPysTt7F5UZuhFFDqGQYGgXvnStbLoFskBsr3zftH"
+                  width="50"
+                  height="50"
+                  class="itemimg"
+                  alt="160;35;250;4;10"
+                />
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <div
+                class="item"
+                onclick="showImage('https://blogger.googleusercontent.com/img/a/AVvXsEhGrZWtpWbFg8eHk2_qXjox3tfkOaZW6caqxRdPuOSuzgrtmJ2oRHEZguQaivdJR4ycSItR6TETMrX5OujBzOxxpFhxcFlojLIHNux4UBqzZGWzXsgme1uIVx22z9hBPJdn-yNV7_GIl--BP6XxfWYYbZGV6VOFY6O1QDyczUI9mRYbwzKUqlBP3_as9sx6','타워5',45,30,150,110)"
+              >
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEhGrZWtpWbFg8eHk2_qXjox3tfkOaZW6caqxRdPuOSuzgrtmJ2oRHEZguQaivdJR4ycSItR6TETMrX5OujBzOxxpFhxcFlojLIHNux4UBqzZGWzXsgme1uIVx22z9hBPJdn-yNV7_GIl--BP6XxfWYYbZGV6VOFY6O1QDyczUI9mRYbwzKUqlBP3_as9sx6"
+                  width="50"
+                  height="50"
+                  class="itemimg"
+                  alt="110;45;150;5;30"
+
+
+                  
+                />
+              </div>
+            </th>
+            <th>
+              <div
+                class="item"
+                onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                  width="50"
+                  height="50"
+
+                  
+                />
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <div
+                class="item"
+                onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                  width="50"
+                  height="50"
+                />
+              </div>
+            </th>
+            <th>
+              <div
+                class="item"
+                onclick="showImage('https://cdn-icons-png.flaticon.com/128/25/25333.png')"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/25/25333.png"
+                  width="50"
+                  height="50"
+                />
+              </div>
+            </th>
+          </tr>
+        </tbody>
+      </table>
           <div class="main">
             <div class="mainbutton">시작하기</div>
+            <div class="mainbutton2">판매하기</div>
           </div>
         </div>
       </div>
